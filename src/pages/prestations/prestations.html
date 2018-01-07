@@ -1,0 +1,199 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Prestations</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2 style="text-align: center;">Prestations</h2>
+    <ion-list>
+        <ion-item>
+          <ion-label>Choisir le type de prestation</ion-label>
+          <ion-select [(ngModel)]="type_prestation" interface="action-sheet" (ionChange)="setTitle()">
+            <ion-option value="cotisations_assures">Cotisations des assurés</ion-option>
+            <ion-option value="principe_pensions">Principe des pensions</ion-option>
+            <ion-option value="pension_retraite">Pension de retraite</ion-option>
+            <ion-option value="pension_reversion_ou_pension_survivants">Pension de reversion ou pension de survivants</ion-option>
+            <ion-option value="pension_invalidite">Pension d'invalidité</ion-option>
+            <ion-option value="capital_deces">Capital décès</ion-option>
+            <ion-option value="remboursement">Le remboursement</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <div *ngIf="type_prestation !== ''">
+          <ion-card>
+            <ion-card-header>
+              <div><h2 style="color:red;"><strong>{{ title }}</strong></h2></div>
+            </ion-card-header>
+            <ion-card-content>
+
+              <div *ngIf="'cotisations_assures' === type_prestation">
+                  <div>
+                      <p style="text-align: justify;"><span style="font-size: medium;">Le financement des prestations de pension est assuré par des cotisations dont le taux global varie entre 20% et 22% du solde indiciaire ou du salaire de base, soit : <br></span></p>
+                      <ul>
+                          <li><span style="font-size: medium;">8% à la charge de l’employé </span></li>
+                      </ul>
+                      <ul>
+                          <li><span style="font-size: medium;">12% à la charge de l’État employeur et 14% pour les employeurs des assurés en position de détachement.</span></li>
+                      </ul>
+                      <p style="text-align: justify;"><span style="font-size: medium;">En plus de cela, la CARFO a la charge, la réparation des risques professionnels. A savoir,&nbsp;les soins médicaux, les rentes et les allocations d’incapacité, les rentes et les allocations de survivant. Le financement de cette branche est assuré par l'Etat burkinabé qui cotise à raison de 1.5% du salaire indiciaire pour chaque agent de la fonction publique.</span><span style="font-size: medium;"><br></span></p>
+                  </div>
+              </div>
+
+              <div *ngIf="'principe_pensions' === type_prestation">
+                  <div>
+                      <p style="text-align: justify;"><span style="font-size: medium;">Les prestations de pensions servies par la CARFO sont régies par les lois n° 47/94/ADP du 29/11/1994, portant Régime Général de Retraite des fonctionnaires, militaires et magistrats et n° 033/98/AN, portant institution d’une coordination entre le régime de retraite des fonctionnaires civils, militaires et magistrats et le régime de pension des travailleurs régis par le code de la sécurité sociale.</span></p>
+                      <p style="text-align: justify;"><span style="font-size: medium;">Une fois les cotisations acquises, le bénéfice des prestations est soumis au dépôt d’un dossier composé d’une demande et diverses pièces administratives et d’état civil. Ces pièces sont complétées par le Relevé Général des Services (RGS) de l’assuré social ainsi que son Certificat de Cessation de Paiement (CCP).</span></p>
+                      <p style="text-align: justify;"><span style="font-size: medium;">Le dossier doit être déposé auprès des services de la CARFO dans un délai 4 ans pour la pension de retraite, et le capital décès et 10 ans pour la pension de survivants. Il importe donc aux usagers de la CARFO d’approcher les services pour s’informer davantage sur leurs droits mais aussi sur leurs devoirs. Par ailleurs, chaque assuré social devrait s’assurer de l’évolution correcte de sa carrière durant sa période d’activité afin de faciliter la constitution de son dossier de demande de prestations au moment venu.</span></p>
+                      <p style="text-align: justify;"><span style="font-size: medium;">La CARFO sert actuellement les prestations suivantes :&nbsp;</span></p>
+                      <p style="text-align: justify;"><span style="font-size: medium;"><strong>Au titre du régime de retraite :&nbsp;</strong><br>&nbsp; &nbsp; &nbsp;&nbsp; la pension de retraite, <br>&nbsp; &nbsp; &nbsp;&nbsp; les remboursements des cotisations, <br>&nbsp; &nbsp; &nbsp;&nbsp; la pension de conjoint survivant,<br>&nbsp; &nbsp; &nbsp;&nbsp; la pension d’orphelin.<br><strong>Au titre du régime des risques professionnels :</strong><br>&nbsp; &nbsp; &nbsp;&nbsp; les soins médicaux,<br>&nbsp; &nbsp; &nbsp;&nbsp; les rentes et les allocations d’incapacité, <br>&nbsp; &nbsp; &nbsp;&nbsp; les rentes et les allocations de survivant.</span></p>
+                  </div>  
+              </div>
+
+              <div *ngIf="'pension_retraite' === type_prestation">
+                  <div>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>1- Définition</strong></span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">La pension de retraite peut être définie comme étant une prestation versée au travailleur admis à la retraite afin de lui permettre de faire face à ses besoins de consommation, en remplacement du revenu du travail (salaire) qu’il ne perçoit plus.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>2- Qui peut prétendre à cette pension ?</strong></span></p>
+                    <ul>
+                      <li><span style="font-size: medium;">Tout fonctionnaire, militaire ou magistrat, agent de l’Etat, intégré dans un cadre régulier de la Fonction Publique, de l’Armée ou de la Gendarmerie Nationale. </span></li>
+                    </ul>
+                    <ul>
+                      <li><span style="font-size: medium;">Les agents contractuels de l’Etat recrutés pour compter du 01/01/1999.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>3- Quelles sont les conditions d’octroi de la pension de retraite ?</strong></span></p>
+                    <ul>
+                      <li><span style="font-size: medium;">Avoir atteint la limite d’âge de son emploi. Les références concernant cet aspect sont :</span></li>
+                    </ul>
+                    <ul>
+                      <li><span style="font-size: medium;">le décret n°96-280/PRES/PM/MFPMA/MEF du 25 jiullet 1996, fixant le régime des limites d’âge pour la retraite des fonctionnaires et des agents de l’Etat. * La loi n°002-2000/AN du 21/02/2000 portant fixation de la limite d’âge des personnels militaires des forces armées nationales * Avoir une ancienneté d’au moins 15 ans de service effectifs et être à jour de ses cotisations ; * Avoir cessé définitivement toute activité dans la fonction publique, l’Armée ou la Gendarmerie ; * Avoir été préalablement admis à faire valoir ses droits à la retraite.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong> Remarque :</strong> la pension de retraite peut être octroyée également pour raison de santé au fonctionnaire qui se trouve dans l’impossibilité définitive et absolue de travailler par suite d’une invalidité ne résultant pas de blessures ou de maladies contractées ou aggravées en service, s’il justifie d’au moins quinze ans de services effectifs.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>4- Comment se calcule la pension de retraite ?</strong></span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">La pension de retraite se calcule sur la base des éléments ci-après :</span></p>
+                    <ul>
+                      <li><span style="font-size: medium;">Nombre d’années de service du fonctionnaire ou du militaire</span></li>
+                      <li><span style="font-size: medium;"> L’indice du fonctionnaire correspondant à son grade au moment du départ à la retraite </span></li>
+                      <li><span style="font-size: medium;"> La valeur du point indiciaire : 2331.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;">La pension de retraite est fixée à 2% par annuité liquidable des émoluments annuels. Formule = indice x point indiciaire x (nombre d’années de service x 2) 100.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">Signalons que les titulaires de la pension de retraite bénéficient d’une majoration pour enfants mineurs. Elle est accordée pour 4 enfants au maximum et son montant est de 17 912 F CFA par an et par enfant et est payable jusqu’à ce que les enfants aient l’âge de 20 ans. Cependant les enfants atteints d’une infirmité les rendant incapables de gagner leur vie sont considérés comme mineurs et ont droit à la majoration durant leur vie.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">La pension de retraite court pour compter du premier jour du mois suivant celui de la cessation d’activité.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong> Important :</strong> Tout dossier de demande de pension de retraite doit être déposée auprès de la CARFO dans un délai de quatre (04) ans à partir de la date de départ à la retraite, sous peine de prescription.</span></p>
+                  </div>
+              </div>
+
+              <div *ngIf="'pension_reversion_ou_pension_survivants' === type_prestation">
+                  <div>
+                    <p style="text-align: justify;"><span style="font-size: medium;">La pension de réversion est la rétrocession dans des conditions fixées par la réglementation, de la pension dont bénéficiait ou aurait pu bénéficier l’assuré, à ses ayants cause après son décès. La pension de réversion comprend :</span></p>
+                    <ul>
+                      <li><span style="font-size: medium;">La pension de conjoints survivants qui est égale à 50% de la pension principale et </span></li>
+                    </ul>
+                    <ul>
+                      <li><span style="font-size: medium;">La pension temporaire d’orphelins qui est égale à 10 % pour chaque orphelin jusqu’à l’âge de 20 ans, à concurrence de 50 % de la pension principale. Cependant les enfants atteints d’une infirmité les rendant incapables de gagner leur vie sont considérés comme mineurs et ont droit à la pension d’orphelins toute leur vie.</span></li>
+                    </ul>
+                  </div>
+              </div>
+
+              <div *ngIf="'pension_invalidite' === type_prestation">
+                  <div>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;"><strong>1. Définition</strong></span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">La pension d’invalidité est accordée à l’agent de la fonction publique à la suite d’infirmités ou incapacités fonctionnelles résultant de maladies ou de blessures contractées en service, par le fait du service ou à l’occasion du service. Il y a deux régimes pour ce genre de pension :</span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;"><strong>     1.1 la pension temporaire d’invalidité</strong></span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">Elle est servie tant que l’infirmité résultant de la blessure ou de la maladie n’est pas reconnue incurable. Elle est allouée au départ pendant une période de 3 ans et est renouvelée pour 2 ans en ce qui concerne les blessures. S’il s’agit d’une pension d’invalidité octroyée pour cause de maladie, elle est renouvelable 2 fois par période de 3 ans.</span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;"><strong>     1.2 La pension définitive d’invalidité</strong></span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">Lorsque à l’expiration des délais ci-dessus cités intervient la constatation médicale de la persistance de l’invalidité, la pension temporaire d’invalidité est transformée en pension définitive d’invalidité.</span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;"><strong>2- Le calcul de la pension d’invalidité</strong></span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">Le calcul de la pension d’invalidité prend en compte les éléments suivants :</span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">- Le taux de l’invalidité affecté à l’agent ; </span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">- L’indice de l’intéressé ; </span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">- La valeur indiciaire.</span></p>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">Il y a 2 modes de calcul, pour tenir compte de la spécificité liée au cas de l’agent invalide.</span></p>
+                    <ul style="text-align: justify;">
+                        <li><span style="font-size: medium;">Le calcul de la pension d’invalidité au taux de grade. Ce mode est utilisé lorsque l’agent de la fonction publique ne peut bénéficier d’une pension de retraite et lorsque le taux de son invalidité l’amène à cesser immédiatement le service.</span></li>
+                    </ul>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">Formule = indice x point indiciaire x taux 100</span></p>
+                    <ul style="text-align: justify;">
+                        <li><span style="font-size: medium;">Le calcul de la pension d’invalidité au « taux de soldat » Ce mode est utilisé lorsque l’agent peut bénéficier d’une pension qui sera cumlulée avec sa pension de retraite. La mention commune « taux de soldat » fait référence à l’indice du soldat dont le salaire est le moins élevé, et qui a été utilisé au départ pour instaurer ce mode de calcul. A l’heure actuelle, cet indice est de 260 depuis le 01/01/1999.</span></li>
+                    </ul>
+                    <p style="text-align: justify;" align="justify"><span style="font-size: medium;">Formule = 260 x point indiciaire x taux 100</span></p>
+                  </div>
+              </div>
+
+              <div *ngIf="'capital_deces' === type_prestation">
+                  <div>
+                    <p style="text-align: justify;"><span style="font-size: medium;">C’est une prestation de l’Etat dont la CARFO assure la liquidation et le paiement moyennant la compensation.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">Le capital décès est régi par :</span></p>
+                    <ul>
+                        <li><span style="font-size: medium;">Les article 187, 189, et 190 du statut général de la Fonction Publique (Zatu n°AN VI-0008/FP/TRAV du 26 octobre 1988) instituant le capital décès. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">Le décret n°143/PRES/T/FP/SE du 11 avril 1961, portant modalités d’application des dispositions instituant le capital-décès (agents civils) </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">Le décret n°116/PRES/DN/EM du 6 mars 1963, portant modalités d’octroi du capital décès aux ayants droit des militaires. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">La loi n°055/98/AN du 10/12/1998, portant prise en charge des capitaux décès par le budget de l’Etat.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>Définition</strong></span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">Le capital décès est une assistance financière que l’Etat employeur apporte à la famille de l’agent de la Fonction Publique décédé en activité dans toute autre position détemrinée par les dispositions règlementaires en la matière.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>1- Qui a droit au capital décès ?</strong></span></p>
+                    <ul>
+                        <li><span style="font-size: medium;">Le capital décès est versé : au conjoint non séparé de corps ni divorcé du de cujus. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">Aux enfants mineurs du de cujus ou âgé de 26 ans s’ils poursuivent leurs études ou sans limitation d’âge s’ils sont atteints d’une infirmité entrainant une incapacité totale du travail. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">A celui ou à ceux des ascendants directs du de cujus qui étaient à sa charge au moment du décès, en cas d’absence d’enfant et de conjoint non divorcé ni séparé de corps.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>2- Quelles sont les conditions d’octroi ?</strong></span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">Le capital décès est versé aux ayants droit si l’agent décédé se trouvait dans l’une des positions ci-après :</span></p>
+                    <ul>
+                        <li><span style="font-size: medium;">En activité </span></li>
+                        <li><span style="font-size: medium;">Détaché (si les règlements de l’employeur ne prévoient pas de capital décès) </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">En disponibilité </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">Sous les drapeaux</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>3- Comment le capital décès est-il calculé, et quelles sont les modalités de paiement ?</strong></span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">Formule =indice x point indiciaire</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;">Le capital décès est égal au dernier traitement brut annuel de l’agent, à l’exclusion de toutes indemnités. A cela s’ajoute une année d’allocation (12 000 Francs CFA) par enfant mineur. Le capital décès est réparti en raison de 1/3 pour la ou les veuves ou le veuf et de 2/3 pour les enfants. Il est payé en une seule fois au profit des bénéficiaires.</span></p>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong> IMPORTANT :</strong> Les ayants droit au capital décès doivent présenter leur dossier dans un délai de quatre (4) ans à partir de la date de l’agent, sous peine de prescription des droits.</span></p> 
+                  </div>
+              </div>
+
+              <div *ngIf="'remboursement' === type_prestation">
+                  <div>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong>1- Dans quel cas s’effectue le remboursement ?</strong></span></p>
+                    <ul>
+                        <li><span style="font-size: medium;">L’assuré qui ayant atteint la limite d’âge de son emploi, ne peut prétendre à une pension de retraite, faute de pouvoir remplir l’ancienneté de quinze (15) ans de service effectifs. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">L’assuré ne pouvant pas se prévaloir de la convention CNSS/CARFO. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">Les ayants cause de l’assuré décédé sans avoir acquis des droits à pension.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong> 2- Comment le remboursement des retenues est-il calculé et payé ?</strong></span></p>
+                    <ul>
+                        <li><span style="font-size: medium;">le calcul des retenues pour pension se fait sur la base du salaire de l’agent afférent à sa classe et échelon d’avancement. Cette retenue est de 6 % jusqu’au 31/12/1986 et de 8% depuis le 01er janvier 1987. </span></li>
+                    </ul>
+                    <ul>
+                        <li><span style="font-size: medium;">La somme globale obtenue est versée en une fois au bénéficiaire.</span></li>
+                    </ul>
+                    <p style="text-align: justify;"><span style="font-size: medium;"><strong> Important :</strong> La demande de remboursement des retenues doit être présentée dans un délai de quatre (4) ans à partir de la date de mise à la retraite, ou de la radiation des cadres sous peine de forclusion.</span></p> 
+                  </div>
+              </div>
+            </ion-card-content>
+          </ion-card>
+      </div>
+  </ion-content>

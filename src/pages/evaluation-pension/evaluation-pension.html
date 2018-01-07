@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Evaluation Pension</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2 style="text-align: center;">Estimer votre pension en fin de carrière</h2>
+  <ion-list>
+      <ion-item>
+        <ion-label>Choisir votre groupe d'appartenance</ion-label>
+        <ion-select [(ngModel)]="groupe_appartenance" interface="action-sheet">
+          <ion-option value="fonctionnaires">Fonctionnaires (Magistrats / Militaires / Agents des postes)</ion-option>
+          <ion-option value="contractuels">Contractuels (recrutés après 1999)</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <h3 *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">Veuillez entrer les informations complémentaires ci-dessous</h3>
+    <div *ngIf="groupe_appartenance == 'fonctionnaires'">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Dernier indice attendu en fin de carrière (entre 3 et 4 chiffres maximum) :</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="groupe_appartenance == 'contractuels'">
+        <ion-list>
+            <ion-item>
+              <ion-label floating>Dernier salaire de base en fin de carrière (nombre à 6 chiffres maximum) :</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">
+        <ion-item>
+            <ion-label>Date d'integration à la fonction publique</ion-label>
+            <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.startDate"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date prévisionnelle de départ à la retraite</ion-label>
+            <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate"></ion-datetime>
+        </ion-item>
+    </div>
+    <div style="margin-top:30px;">
+        <button ion-button color="danger">Annuler</button>
+        <button ion-button>Calculer</button>
+    </div>
+</ion-content>

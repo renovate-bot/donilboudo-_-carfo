@@ -8,11 +8,17 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { EvaluationPensionPage } from '../pages/evaluation-pension/evaluation-pension';
+import { PrestationsPage } from '../pages/prestations/prestations';
+import { DemarchesAdministrativesPage } from '../pages/demarches-administratives/demarches-administratives';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    PrestationsPage,
+    EvaluationPensionPage,
+    DemarchesAdministrativesPage,
     ListPage
   ],
   imports: [
@@ -23,6 +29,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
+    PrestationsPage,
+    EvaluationPensionPage,
+    DemarchesAdministrativesPage,
     ListPage
   ],
   providers: [

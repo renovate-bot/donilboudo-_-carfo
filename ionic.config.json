@@ -1,6 +1,6 @@
 {
   "name": "carfoProject",
-  "app_id": "",
+  "app_id": "1be431d1",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
