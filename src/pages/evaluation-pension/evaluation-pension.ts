@@ -7,6 +7,7 @@ import { NavController } from 'ionic-angular';
 })
 export class EvaluationPensionPage {
   groupe_appartenance: string;
+  show_results: boolean = false; 
 
   public event = {
     month: '1990-02-19',
@@ -16,6 +17,15 @@ export class EvaluationPensionPage {
   }
 
   constructor(public navCtrl: NavController) {
+  }
+
+  showResults() {
+    this.show_results = true;
+  }
+
+  reset() {
+    this.groupe_appartenance = '';
+    this.show_results = false;
   }
 
 }

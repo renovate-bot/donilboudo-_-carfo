@@ -9,27 +9,29 @@
 
 <ion-content padding>
   <h2 style="text-align: center;">Démarches administratives</h2>
-  <ion-list>
-      <ion-item>
-        <ion-label>Choisir le type de démarche</ion-label>
-        <ion-select [(ngModel)]="type_demarche" interface="action-sheet" (ionChange)="setInformations()">
-          <ion-option value="pension_retraite">Pension de retraite</ion-option>
-          <ion-option value="remboursement">Remboursement</ion-option>
-          <ion-option value="pension_reversion">Pension de réversion</ion-option>
-          <ion-option value="capital_deces">Capital décès</ion-option>
-          <ion-option value="reversement">Reversement</ion-option>
-          <ion-option value="changement_tutelle">Changement de tutelle</ion-option>
-          <ion-option value="derniers_arrerages">Derniers Arrérages</ion-option>
-          <ion-option value="accident_maladie">Accident de travail ou Maladie Professionnelle</ion-option>
-          <ion-option value="agents_en_detachement">Agents en détachement</ion-option>
-          <ion-option value="agents_collectivites">Agents de collectivités</ion-option>
-          <ion-option value="traitement_dossier_termine">Traitement de dossier terminé</ion-option>
-          <ion-option value="arret_mandatement">Arrêt de mandatement</ion-option>
-        </ion-select>
-      </ion-item>
+  <ion-card>
+    <ion-list>
+        <ion-item>
+          <ion-label>Choisir le type de démarche</ion-label>
+          <ion-select [(ngModel)]="type_demarche" interface="action-sheet" (ionChange)="setInformations()">
+            <ion-option value="pension_retraite">Pension de retraite</ion-option>
+            <ion-option value="remboursement">Remboursement</ion-option>
+            <ion-option value="pension_reversion">Pension de réversion</ion-option>
+            <ion-option value="capital_deces">Capital décès</ion-option>
+            <ion-option value="reversement">Reversement</ion-option>
+            <ion-option value="changement_tutelle">Changement de tutelle</ion-option>
+            <ion-option value="derniers_arrerages">Derniers Arrérages</ion-option>
+            <ion-option value="accident_maladie">Accident de travail ou Maladie Professionnelle</ion-option>
+            <ion-option value="agents_en_detachement">Agents en détachement</ion-option>
+            <ion-option value="agents_collectivites">Agents de collectivités</ion-option>
+            <ion-option value="traitement_dossier_termine">Traitement de dossier terminé</ion-option>
+            <ion-option value="arret_mandatement">Arrêt de mandatement</ion-option>
+          </ion-select>
+        </ion-item>
     </ion-list>
+  </ion-card>
 
-    <div *ngIf="type_demarche !== ''">
+    <div *ngIf="type_demarche">
       <ion-card>
         <ion-card-header>
           <div style="color:red;"><strong>{{ title }}</strong></div>

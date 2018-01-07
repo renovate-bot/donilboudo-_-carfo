@@ -8,46 +8,70 @@
 </ion-header>
 
 <ion-content padding>
-  <h2 style="text-align: center;">Estimer votre pension en fin de carrière</h2>
-  <ion-list>
-      <ion-item>
-        <ion-label>Choisir votre groupe d'appartenance</ion-label>
-        <ion-select [(ngModel)]="groupe_appartenance" interface="action-sheet">
-          <ion-option value="fonctionnaires">Fonctionnaires (Magistrats / Militaires / Agents des postes)</ion-option>
-          <ion-option value="contractuels">Contractuels (recrutés après 1999)</ion-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
+  <ion-card>
+    <h2 style="text-align: center;"><strong>Estimer votre pension en fin de carrière</strong></h2>
+    <ion-list>
+        <ion-item>
+          <ion-label>Choisir votre groupe d'appartenance</ion-label>
+          <ion-select [(ngModel)]="groupe_appartenance" interface="action-sheet">
+            <ion-option value="fonctionnaires">Fonctionnaires (Magistrats / Militaires / Agents des postes)</ion-option>
+            <ion-option value="contractuels">Contractuels (recrutés après 1999)</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
 
-    <h3 *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">Veuillez entrer les informations complémentaires ci-dessous</h3>
-    <div *ngIf="groupe_appartenance == 'fonctionnaires'">
-        <ion-list>
-          <ion-item>
-            <ion-label floating>Dernier indice attendu en fin de carrière (entre 3 et 4 chiffres maximum) :</ion-label>
-            <ion-input type="text"></ion-input>
-          </ion-item>
-        </ion-list>
-    </div>
-    <div *ngIf="groupe_appartenance == 'contractuels'">
-        <ion-list>
+      <!-- <ion-label *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">Veuillez entrer les informations complémentaires ci-dessous</ion-label> -->
+      <div *ngIf="groupe_appartenance == 'fonctionnaires'">
+          <ion-list>
             <ion-item>
-              <ion-label floating>Dernier salaire de base en fin de carrière (nombre à 6 chiffres maximum) :</ion-label>
+              <ion-label floating>Dernier indice attendu en fin de carrière (entre 3 et 4 chiffres maximum) :</ion-label>
               <ion-input type="text"></ion-input>
             </ion-item>
-        </ion-list>
-    </div>
-    <div *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">
-        <ion-item>
-            <ion-label>Date d'integration à la fonction publique</ion-label>
-            <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.startDate"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-label>Date prévisionnelle de départ à la retraite</ion-label>
-            <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate"></ion-datetime>
-        </ion-item>
-    </div>
-    <div style="margin-top:30px;">
-        <button ion-button color="danger">Annuler</button>
-        <button ion-button>Calculer</button>
-    </div>
+          </ion-list>
+      </div>
+      <div *ngIf="groupe_appartenance == 'contractuels'">
+          <ion-list>
+              <ion-item>
+                <ion-label floating>Dernier salaire de base en fin de carrière (nombre à 6 chiffres maximum) :</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+          </ion-list>
+      </div>
+      <div *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">
+          <ion-item>
+              <ion-label>Date d'integration à la fonction publique</ion-label>
+              <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.startDate"></ion-datetime>
+          </ion-item>
+          <ion-item>
+              <ion-label>Date prévisionnelle de départ à la retraite</ion-label>
+              <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate"></ion-datetime>
+          </ion-item>
+      </div>
+      <div style="margin-top:30px; padding-left:10px;">
+          <button ion-button color="danger" (click)="reset()">Annuler</button>
+          <button ion-button (click)="showResults()">Calculer</button>
+      </div>
+  </ion-card>
+
+  <ion-card *ngIf="show_results === true" style="padding-left: 20px; margin-top:50px;">
+      <ion-card-header>
+          <div><h2 style="color:red;"><strong>Résultats</strong></h2></div>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>Si vous n'avez enregistré aucune intérruption dans votre carrière, si vos cotisations ont été régulièrement versées et si vous n'avez pas de bonification pour campagne en ce qui concerne les militaires, la situation à votre départ à la retraite se présente comme suit: </p>
+        <br>
+        <p>
+            Date de récrutement : <strong>{{ event.startDate }}</strong>
+            <br>
+            Date de retraite: <strong>{{ event.endDate }}</strong>
+        </p>
+        <br>
+        <p>
+            La pension annuelle est de : <strong> 269 510  FCFA</strong>
+            <br>
+            La pension mensuelle est de : <strong>22 459  FCFA</strong>
+        </p>
+      </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EvaluationPensionPage } from '../pages/evaluation-pension/evaluation-pension';
 import { PrestationsPage } from '../pages/prestations/prestations';
 import { DemarchesAdministrativesPage } from '../pages/demarches-administratives/demarches-administratives';
+import { ContactsPage } from '../pages/contacts/contacts';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { DemarchesAdministrativesPage } from '../pages/demarches-administratives
     PrestationsPage,
     EvaluationPensionPage,
     DemarchesAdministrativesPage,
-    ListPage
+    ContactsPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,7 @@ import { DemarchesAdministrativesPage } from '../pages/demarches-administratives
     PrestationsPage,
     EvaluationPensionPage,
     DemarchesAdministrativesPage,
-    ListPage
+    ContactsPage
   ],
   providers: [
     StatusBar,

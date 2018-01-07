@@ -9,28 +9,29 @@
   
   <ion-content padding>
     <h2 style="text-align: center;">Prestations</h2>
-    <ion-list>
-        <ion-item>
-          <ion-label>Choisir le type de prestation</ion-label>
-          <ion-select [(ngModel)]="type_prestation" interface="action-sheet" (ionChange)="setTitle()">
-            <ion-option value="cotisations_assures">Cotisations des assurés</ion-option>
-            <ion-option value="principe_pensions">Principe des pensions</ion-option>
-            <ion-option value="pension_retraite">Pension de retraite</ion-option>
-            <ion-option value="pension_reversion_ou_pension_survivants">Pension de reversion ou pension de survivants</ion-option>
-            <ion-option value="pension_invalidite">Pension d'invalidité</ion-option>
-            <ion-option value="capital_deces">Capital décès</ion-option>
-            <ion-option value="remboursement">Le remboursement</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
+    <ion-card>
+      <ion-list>
+          <ion-item>
+            <ion-label>Choisir le type de prestation</ion-label>
+            <ion-select [(ngModel)]="type_prestation" interface="action-sheet" (ionChange)="setTitle()">
+              <ion-option value="cotisations_assures">Cotisations des assurés</ion-option>
+              <ion-option value="principe_pensions">Principe des pensions</ion-option>
+              <ion-option value="pension_retraite">Pension de retraite</ion-option>
+              <ion-option value="pension_reversion_ou_pension_survivants">Pension de reversion ou pension de survivants</ion-option>
+              <ion-option value="pension_invalidite">Pension d'invalidité</ion-option>
+              <ion-option value="capital_deces">Capital décès</ion-option>
+              <ion-option value="remboursement">Le remboursement</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+    </ion-card>
 
-      <div *ngIf="type_prestation !== ''">
+      <div *ngIf="type_prestation">
           <ion-card>
             <ion-card-header>
               <div><h2 style="color:red;"><strong>{{ title }}</strong></h2></div>
             </ion-card-header>
             <ion-card-content>
-
               <div *ngIf="'cotisations_assures' === type_prestation">
                   <div>
                       <p style="text-align: justify;"><span style="font-size: medium;">Le financement des prestations de pension est assuré par des cotisations dont le taux global varie entre 20% et 22% du solde indiciaire ou du salaire de base, soit : <br></span></p>
