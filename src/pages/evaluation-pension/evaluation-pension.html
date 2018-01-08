@@ -9,7 +9,25 @@
 
 <ion-content padding>
   <ion-card>
-    <h2 style="text-align: center;"><strong>Estimer votre pension en fin de carrière</strong></h2>
+    <ion-card-header>
+          <ion-label style="color:red;"><strong>Informations</strong></ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <p style="padding-left:15px; padding-right:15px;">Vous êtes en activité et vous voulez connaitre le montant de votre future pension de retraite.<br>
+        Désormais, la <strong>Caisse Autonome de Retraite des Fonctionnaires (CARFO)</strong> met à votre disposition
+        un outil vous permettant d'évaluer le montant de votre pension au moment de votre départ à la retraite,
+        que vous soyez fonctionnaire ou agent contractuel de l'état.<br>
+        Pour cela vous devez renseigner:
+      </p>
+      <ol>
+          <li>Votre dernier indice au moment du départ à la retraite (pour les fonctionnaires) ou votre dernier salaire de base (pour les agents contractuels de l'état).</li>
+          <li>La date d'intégration à la fonction publique.</li>
+          <li>La date prévisionnelle de départ à la retraite avant.</li>
+      </ol>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-top:20px;">
+    <h2 style="text-align: center; padding-top:10px; color:red;"><strong>Estimer votre pension en fin de carrière</strong></h2>
     <ion-list>
         <ion-item>
           <ion-label>Choisir votre groupe d'appartenance</ion-label>
@@ -25,7 +43,7 @@
           <ion-list>
             <ion-item>
               <ion-label floating>Dernier indice attendu en fin de carrière (entre 3 et 4 chiffres maximum) :</ion-label>
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="indice"></ion-input>
             </ion-item>
           </ion-list>
       </div>
@@ -33,7 +51,7 @@
           <ion-list>
               <ion-item>
                 <ion-label floating>Dernier salaire de base en fin de carrière (nombre à 6 chiffres maximum) :</ion-label>
-                <ion-input type="text"></ion-input>
+                <ion-input type="text" [(ngModel)]="indice"></ion-input>
               </ion-item>
           </ion-list>
       </div>
@@ -44,16 +62,16 @@
           </ion-item>
           <ion-item>
               <ion-label>Date prévisionnelle de départ à la retraite</ion-label>
-              <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate"></ion-datetime>
+              <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate" max="{{maxDate}}" min="{{minDate}}"></ion-datetime>
           </ion-item>
       </div>
       <div style="margin-top:30px; padding-left:10px;">
           <button ion-button color="danger" (click)="reset()">Annuler</button>
-          <button ion-button (click)="showResults()">Calculer</button>
+          <button ion-button (click)="calculPension()">Calculer</button>
       </div>
   </ion-card>
 
-  <ion-card *ngIf="show_results === true" style="padding-left: 20px; margin-top:50px;">
+  <ion-card *ngIf="show_results === true" style="padding-left: 20px; margin-top:20px;">
       <ion-card-header>
           <div><h2 style="color:red;"><strong>Résultats</strong></h2></div>
       </ion-card-header>
@@ -68,9 +86,9 @@
         </p>
         <br>
         <p>
-            La pension annuelle est de : <strong> 269 510  FCFA</strong>
+            La pension annuelle est de : <strong> {{ estimation_year }}  FCFA</strong>
             <br>
-            La pension mensuelle est de : <strong>22 459  FCFA</strong>
+            La pension mensuelle est de : <strong>{{ estimation_month}}  FCFA</strong>
         </p>
       </ion-card-content>
   </ion-card>

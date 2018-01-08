@@ -12,18 +12,23 @@
         <ion-img src="assets/imgs/carfo-logo.png" class="logo"></ion-img>
     </div>
     <br><br>
-    <div>
-        <!-- <button ion-button round [navPush]="presentation">Présentation</button> -->
-        <button ion-button round [navPush]="prestation">
-            Prestation
-          </button>
-        <button ion-button round item-end icon-star [navPush]="evaluationPension">
-            <ion-icon name="ios-calculator"></ion-icon>
-            Evaluation de votre pension
-        </button>
-        <button ion-button round item-end icon-star [navPush]="demarchesAdmininstratives">
-            <ion-icon name="ios-list-outline"></ion-icon>
-              Démarches administratives
-        </button>
+    <div class="center-div">
+      <table style="margin-left: -50px;">
+        <tr>
+          <td>
+              <button ion-button round [navPush]="prestation" color="secondary">Prestation</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <button ion-button round [navPush]="evaluationPension" color="secondary">Evaluation de votre pension</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+              <button ion-button round [navPush]="demarchesAdmininstratives" color="secondary">Démarches administratives</button>
+          </td>
+        </tr>
+      </table>
     </div>
 </ion-content>
