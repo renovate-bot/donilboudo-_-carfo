@@ -1,0 +1,208 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Démarches administratives</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="type_demarche">
+      <ion-card>
+        <ion-card-header>
+          <ion-label text-wrap class="title"><strong>{{ title }}</strong></ion-label>
+        </ion-card-header>
+        <ion-card-content style="font-style: italic ">
+          {{ description }}
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+            <ion-label class="title"><strong>Liste des pièces à fournir</strong></ion-label>
+        </ion-card-header>
+        <ion-card-content>
+          
+          <div *ngIf="'pension_retraite' === type_demarche">
+            <ul>
+              <li>Une demande de pension non légalisée (imprimé à retirer à la CARFO ou à télécharger sur le site web).</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance de l'assuré.</li>
+              <li>Un extrait d'acte de naissance ou le jugement supplétif d'acte de naissance des enfants mineurs (moins de 20 ans) de l'assuré.</li>
+              <li>Un état indicatif de situation de famille non légalisé (imprimé à retirer à la CARFO ou à télécharger sur le site web).</li>
+              <li>Une (01) photo d'identité récente de l'assuré.</li>
+              <li>Un relevé général de service (R.G.S.) de l'assuré.</li>
+              <li>L'acte de cessation définitive d'activité (mise à la retraite, licenciement, révocation etc….).</li>
+              <li>Un certificat de cessation de paiement (CCP) pour les militaires.</li>
+              <li>Le dernier bulletin de salaire et le récépissé de la demande du CCP pour les civils comptabilisant une année (01) au plus après leur date de départ à la retraite.</li>
+              <li>Un certificat de cessation de paiement (CCP) pour les civils dans les cas ci-après :</li>
+                  <ul>
+                      <li>assuré comptabilisant plus d'une année (1) après la date de départ à la retraite.</li>
+                      <li>assuré admis à la retraite anticipée.</li>
+                      <li>assuré ayant fait l'objet de licenciement ou de révocation.</li>
+                  </ul>
+              <li>Un relevé d'identité bancaire ou tout document similaire pour la domiciliation de la pension dans une banque ou tout établissement financier régulièrement installé au Burkina Faso doit être obligatoirement joint sous peine de rejet de dossier de pension.</li>
+              <li>Une photocopie non légalisée de la carte nationale d'identité de l'assuré.</li>
+
+              <li>Joindre une attestation de cotisation pour les agents ayant bénéficié de détachement.</li>
+              <li>Joindre une attestation de validation pour les agents ayant accompli des services temporaires.</li>
+              <li>Joindre les actes de mise en disponibilité, ou de réquisition s'il y a lieu.</li>
+              <li>Joindre un acte d'individualité si vous êtes connu sous différents prénoms.</li>
+              <li>Joindre un jugement rectificatif de nom en cas d'erreur sur votre nom de famille.</li>
+              <li>Joindre une copie de la carte d'immatriculation à la CNSS pour les assurés bénéficiant de la convention CARFO-CNSS.</li>
+            </ul>
+          </div>
+
+          <div *ngIf="'remboursement' === type_demarche">
+            <ul>
+              <li>Une demande manuscrite de remboursement des retenues pour pension non légalisée.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance de l'assuré.</li>
+              <li>Un relevé général de service de l'assuré (R G S).</li>
+              <li>Un certificat de cessation de paiement (CCP) de l'assuré.</li>
+              <li>L'acte de cessation définitive d'activité (mise à la retraite, licenciement, révocation etc….).</li>
+              
+              <li>Joindre un acte d’individualité si vous êtes connu sous différents prénoms.</li>
+              <li>Joindre un jugement rectificatif de nom en cas d’erreur sur le nom de famille de l’assuré.</li>
+              <li>Joindre une attestation du S. N. D. ou de la dispense du S.N.D.</li>
+            </ul>
+          </div>
+
+          <div *ngIf="'pension_reversion' === type_demarche">
+            <ul>
+              <li>Une demande non timbrée adressée à Madame la Directrice Générale de CARFO.</li>
+              <li>Un acte décès de l'assuré.</li>
+              <li>Une copie du bulletin de pension du défunt.</li>
+              <li>Un procès-verbal du conseil de famille.</li>
+              <li>Un certificat d'hérédité.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance de la veuve.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance du tuteur au cas où celui-ci serait différent de la veuve.</li>
+              <li>Un acte de mariage de la veuve.</li>
+              <li>Un certificat de non divorce, non séparation de corps(imprimé à retirer à la CARFO ou à télécharger sur le site web).</li>
+              <li>Un certificat de non remariage(imprimé à retirer à la CARFO ou à télécharger sur le site web).</li>
+              <li>Un certificat de vie collectif des orphelins mineurs.</li>
+              <li>Une ordonnance de tutelle si la veuve n'est pas tutrice de ses enfants.</li>
+              
+              <li>Joindre un acte d’individualité si la veuve ou le tuteur est connu sous différents prénoms.</li>
+              <li>Joindre un jugement rectificatif de nom en cas d’erreur sur le nom de famille de la veuve.</li>
+            </ul>
+          </div>
+
+          <div *ngIf="'capital_deces' === type_demarche">
+            <ul>
+              <li>Une demande de capital décès non légalisée (imprimé à retirer à la CARFO).</li>
+              <li>Un bulletin de décès de l'assuré.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance du défunt.</li>
+              <li>Un extrait d'acte de mariage de conjoint (es) établis antérieurement au décès de l'assuré.</li>
+              <li>Un certificat de non divorce ou de non séparation de corps du conjoint survivant (imprimé à retirer à la CARFO ou à télécharger sur le site web).</li>
+              <li>Un certificat de non remariage (imprimé à retirer à la CARFO ou à télécharger sur le site web).</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance des conjoints survivants.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance des orphelins mineurs (moins de 20 ans).</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance des orphelins majeurs âgés d'au plus 26 ans et poursuivant des études supérieures.</li>
+              <li>Un certificat médical des enfants infirmes de plus de 20 ans et incapables de gagner leur vie délivré par un médecin avant le décès de l'assuré.</li>
+              <li>Un certificat de vie des enfants.</li>
+              <li>Un certificat d'hérédité.</li>
+              <li>Un acte d'autorité parentale ou de tutelle.</li>
+              <li>Un procès-verbal du conseil de famille.</li>
+              <li>Un certificat de scolarité des orphelins majeurs âgés d'au plus 26 ans et poursuivant des études supérieures.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance des ascendants (père et mère du défunt) en cas d'absence de conjoint (s) survivant (s) ou d'enfants.</li>
+              <li>Un acte de naissance du tuteur ou de la tutrice.</li>
+              <li>Un relevé général de service du défunt (R G S).</li>
+              
+              <li>Joindre un acte d’individualité si vous êtes connu sous différents prénoms.</li>
+              <li>Joindre un jugement rectificatif de nom en cas d’erreur sur le nom de famille de l’assuré.</li>
+              <li>Joindre une attestation du S. N. D. ou de la dispense du S.N.D.</li>
+            </ul>
+          </div>
+
+          <div *ngIf="'reversement' === type_demarche">
+              <ul>
+                <li>Une demande non timbrée adressée à Madame la Directrice Générale de la CARFO.</li>
+                <li>Une copie du bulletin de décès du pensionné.</li>
+                <li>Une copie du bulletin de pension.</li>
+              </ul>
+          </div>
+
+          <div *ngIf="'changement_tutelle' === type_demarche">
+            <ul>
+              <li>Une demande manuscrite de changement de tutelle non timbrée adressée à Madame la Directrice Générale de CARFO.</li>
+              <li>Un extrait d'acte de naissance ou de jugement supplétif d'acte de naissance du nouveau tuteur.</li>
+              <li>Un acte d'autorité parentale ou de tutelle (ordonnance de tutelle).</li>
+              <li>Une copie du bulletin de pension.</li>
+              <li>Un procès - verbal de conseil de famille.</li>
+              <li>Un certificat de vie collectif des enfants.</li>
+              
+              <li>Joindre un acte d'individualité lorsque l'intéressé est connu sous différents prénoms.</li>
+            </ul>
+          </div>
+
+          <div *ngIf="'derniers_arrerages' === type_demarche">
+              <ul>
+                <li>Une demande non timbrée adressée à Madame la Directrice Générale de la CARFO.</li>
+                <li>Une copie du bulletin de décès du pensionné.</li>
+                <li>Une copie du bulletin de pension.</li>
+                <li>Un procès - verbal de conseil de famille.</li>
+                <li>Un certificat d'hérédité.</li>
+              </ul>
+          </div>
+
+          <div *ngIf="'accident_maladie' === type_demarche">
+              <ul>
+                <li>Une demande manuscrite non timbrée adressée à Madame la Directrice Générale de la CARFO demandant à passer devant le comité de santé en précisant vos attentes.</li>
+                <li>La déclaration de l'accident de travail ou de la maladie professionnelle jointe au procès verbal de constat de police ou de gendarmerie en cas d'accident de trajet.</li>
+                <li>Le certificat médical initial de l'accident de travail ou de la maladie professionnelle.</li>
+                <li>Les certificats médicaux de prolongation de repos durant la durée de l'incapacité temporaire.</li>
+                <li>Le rapport médical, appuyé des pièces sur la base desquelles a été déterminée la date de consolidation de la blessure ou de guérison apparente de la maladie ou l'appréciation préliminaire de séquelles de l'accident ou de la maladie, en cas de demande de fixation du taux d'incapacité.</li>
+                <li>Pour l'assuré militaire un rapport circonstancié du commandant de l'unité.</li>
+                <li>Pour l'assuré militaire un extrait du registre des constations des blessures, infirmités et maladies de l'arme.</li>
+                <li>Pour l'assuré civil, un rapport administratif en cas d'accident survenu sur le lieu de travail.</li>
+                <li>Un acte de naissance de l'assuré.</li>
+                <li>Une photocopie non légalisée de la carte nationale d'identité.</li>
+                <li>Une copie de l'ordre de mission s'il ya lieu.</li>
+                <li>Un bulletin de salaire.</li>
+              </ul>
+          </div>
+
+          <div *ngIf="'agents_en_detachement' === type_demarche">
+              <ul>
+                <li>Un arrêté de détachement ou de nomination.</li>
+                <li>Un certificat de cessation de service.</li>
+                <li>Un certificat de prise de service.</li>
+                <li>Un procès - verbal de conseil de famille.</li>
+                <li>Votre dernier arrêté d'avancement.</li>
+                
+                <li>Joindre votre adresse complète.</li>
+              </ul>
+          </div>
+
+          <div *ngIf="'agents_collectivites' === type_demarche">
+              <ul>
+                <li>Un arrêté d'engagement.</li>
+                <li>Un certificat de prise de service.</li>
+                
+                <li>Joindre votre adresse complète.</li>
+              </ul>
+          </div>
+
+          <div *ngIf="'traitement_dossier_termine' === type_demarche">
+              <ul>
+                <li>Une carte nationale d'identité ou passeport en cours de validité.</li>
+                <li>Un bulletin de pension ou la carte de pensionné.</li>
+                <li>Un certificat d'individualité au cas où l'intéressé est connu sous différents prénoms. <b>(par le retraité, la veuve ou le tuteur)</b></li>
+                <li>Une ordonnance de représentation légale ou un certificat de vie et de procuration. <b>(par le représentant légal)</b></li>
+              </ul>
+          </div>
+
+          <div *ngIf="'arret_mandatement' === type_demarche">
+              <ul>
+                <li>Un acte de décès du pensionné/retraité décédé.</li>
+                <li>Une demande manuscrite d'arrêt de mandatement non timbrée de la veuve ou veuf remarié(e)).</li>
+                <li>Un acte de mariage de la veuve ou du veuf remarié(e).</li>
+                <li>Une demande manuscrite d'opposition de paiement non timbrée.</li>
+                <li>Les pièces justificatives.</li>
+                <li>Un bulletin de pension.</li>
+              </ul>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+</ion-content>

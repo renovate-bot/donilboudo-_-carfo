@@ -4,10 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { EvaluationPensionPage } from '../pages/evaluation-pension/evaluation-pension';
 import { PrestationsPage } from '../pages/prestations/prestations';
 import { DemarchesAdministrativesPage } from '../pages/demarches-administratives/demarches-administratives';
 import { ContactsPage } from '../pages/contacts/contacts';
+import { EvaluationPensionInfoPage } from '../pages/evaluation-pension/evaluation-pension-info';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +26,7 @@ export class MyApp {
     this.pages = [
       { title: 'Acceuil', component: HomePage },
       { title: 'Prestations', component: PrestationsPage },
-      { title: 'Evaluation Pension', component: EvaluationPensionPage },
+      { title: 'Evaluation Pension', component: EvaluationPensionInfoPage },
       { title: 'Démarches Administratives', component: DemarchesAdministrativesPage },
       { title: 'Contacts', component: ContactsPage },
     ];

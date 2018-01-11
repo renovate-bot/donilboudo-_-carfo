@@ -9,25 +9,7 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
-          <ion-label style="color:red;"><strong>Informations</strong></ion-label>
-    </ion-card-header>
-    <ion-card-content>
-      <p style="padding-left:15px; padding-right:15px;">Vous êtes en activité et vous voulez connaitre le montant de votre future pension de retraite.<br>
-        Désormais, la <strong>Caisse Autonome de Retraite des Fonctionnaires (CARFO)</strong> met à votre disposition
-        un outil vous permettant d'évaluer le montant de votre pension au moment de votre départ à la retraite,
-        que vous soyez fonctionnaire ou agent contractuel de l'état.<br>
-        Pour cela vous devez renseigner:
-      </p>
-      <ol>
-          <li>Votre dernier indice au moment du départ à la retraite (pour les fonctionnaires) ou votre dernier salaire de base (pour les agents contractuels de l'état).</li>
-          <li>La date d'intégration à la fonction publique.</li>
-          <li>La date prévisionnelle de départ à la retraite avant.</li>
-      </ol>
-    </ion-card-content>
-  </ion-card>
-  <ion-card style="margin-top:20px;">
-    <h2 style="text-align: center; padding-top:10px; color:red;"><strong>Estimer votre pension en fin de carrière</strong></h2>
+    <ion-label class="title"><strong>Estimer votre pension en fin de carrière</strong></ion-label>
     <ion-list>
         <ion-item>
           <ion-label>Choisir votre groupe d'appartenance</ion-label>
@@ -66,7 +48,7 @@
           </ion-item>
       </div>
       <div style="margin-top:30px; padding-left:10px;">
-          <button ion-button color="danger" (click)="reset()">Annuler</button>
+          <button ion-button color="danger" (click)="reset()">Réinitialiser</button>
           <button ion-button (click)="calculPension()">Calculer</button>
       </div>
   </ion-card>

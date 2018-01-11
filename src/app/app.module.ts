@@ -10,16 +10,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EvaluationPensionPage } from '../pages/evaluation-pension/evaluation-pension';
 import { PrestationsPage } from '../pages/prestations/prestations';
 import { DemarchesAdministrativesPage } from '../pages/demarches-administratives/demarches-administratives';
+import { EvaluationPensionInfoPage } from '../pages/evaluation-pension/evaluation-pension-info';
 import { ContactsPage } from '../pages/contacts/contacts';
+import { PrestationDetailPage } from '../pages/prestations/prestation-detail';
+import { DemarcheAdministrativeDetailPage } from '../pages/demarches-administratives/demarche-administrative-detail';
+import { ContactDetailPage } from '../pages/contacts/contact-detail';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     PrestationsPage,
+    PrestationDetailPage,
     EvaluationPensionPage,
+    EvaluationPensionInfoPage,
     DemarchesAdministrativesPage,
-    ContactsPage
+    DemarcheAdministrativeDetailPage,
+    ContactsPage,
+    ContactDetailPage
   ],
   imports: [
     BrowserModule,
@@ -30,9 +38,13 @@ import { ContactsPage } from '../pages/contacts/contacts';
     MyApp,
     HomePage,
     PrestationsPage,
+    PrestationDetailPage,
     EvaluationPensionPage,
+    EvaluationPensionInfoPage,
     DemarchesAdministrativesPage,
-    ContactsPage
+    DemarcheAdministrativeDetailPage,
+    ContactsPage,
+    ContactDetailPage
   ],
   providers: [
     StatusBar,

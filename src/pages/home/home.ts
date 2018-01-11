@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PrestationsPage } from '../prestations/prestations';
-import { EvaluationPensionPage } from '../evaluation-pension/evaluation-pension';
 import { DemarchesAdministrativesPage } from '../demarches-administratives/demarches-administratives';
+import { EvaluationPensionInfoPage } from '../evaluation-pension/evaluation-pension-info';
 
 @Component({
   selector: 'page-home',
@@ -11,7 +11,7 @@ import { DemarchesAdministrativesPage } from '../demarches-administratives/demar
 export class HomePage {
   presentation;
   prestation = PrestationsPage;
-  evaluationPension = EvaluationPensionPage;
+  evaluationPensionInfo = EvaluationPensionInfoPage;
   demarchesAdmininstratives = DemarchesAdministrativesPage;
 
   constructor(public navCtrl: NavController) {

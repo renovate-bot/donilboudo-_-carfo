@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Evaluation Pension</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+          <ion-label class="title"><strong>Informations</strong></ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <p style="padding-left:15px; padding-right:15px;">Vous êtes en activité et vous voulez connaitre le montant de votre future pension de retraite.<br>
+        Désormais, la <strong>Caisse Autonome de Retraite des Fonctionnaires (CARFO)</strong> met à votre disposition
+        un outil vous permettant d'évaluer le montant de votre pension au moment de votre départ à la retraite,
+        que vous soyez fonctionnaire ou agent contractuel de l'état.<br>
+        Pour cela vous devez renseigner:
+      </p>
+      <ol>
+          <li>Votre dernier indice au moment du départ à la retraite (pour les fonctionnaires) ou votre dernier salaire de base (pour les agents contractuels de l'état).</li>
+          <li>La date d'intégration à la fonction publique.</li>
+          <li>La date prévisionnelle de départ à la retraite avant.</li>
+      </ol>
+
+      <button ion-button [navPush]="evaluationPension">On y va!</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
