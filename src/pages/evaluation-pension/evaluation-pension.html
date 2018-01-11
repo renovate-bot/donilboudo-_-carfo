@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-label class="title"><strong>Estimer votre pension en fin de carrière</strong></ion-label>
+    <ion-label class="title" text-wrap><strong>Estimer votre pension en fin de carrière</strong></ion-label>
     <ion-list>
         <ion-item>
           <ion-label>Choisir votre groupe d'appartenance</ion-label>
@@ -24,7 +24,7 @@
       <div *ngIf="groupe_appartenance == 'fonctionnaires'">
           <ion-list>
             <ion-item>
-              <ion-label floating>Dernier indice attendu en fin de carrière (entre 3 et 4 chiffres maximum) :</ion-label>
+              <ion-label floating text-wrap>Dernier indice attendu en fin de carrière (entre 3 et 4 chiffres maximum) :</ion-label>
               <ion-input type="text" [(ngModel)]="indice"></ion-input>
             </ion-item>
           </ion-list>
@@ -32,19 +32,19 @@
       <div *ngIf="groupe_appartenance == 'contractuels'">
           <ion-list>
               <ion-item>
-                <ion-label floating>Dernier salaire de base en fin de carrière (nombre à 6 chiffres maximum) :</ion-label>
+                <ion-label floating text-wrap>Dernier salaire de base en fin de carrière (nombre à 6 chiffres maximum) :</ion-label>
                 <ion-input type="text" [(ngModel)]="indice"></ion-input>
               </ion-item>
           </ion-list>
       </div>
       <div *ngIf="groupe_appartenance == 'fonctionnaires' || groupe_appartenance == 'contractuels'">
           <ion-item>
-              <ion-label>Date d'integration à la fonction publique</ion-label>
+              <ion-label text-wrap>Date d'integration à la fonction publique</ion-label>
               <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.startDate"></ion-datetime>
           </ion-item>
           <ion-item>
-              <ion-label>Date prévisionnelle de départ à la retraite</ion-label>
-              <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate" max="{{maxDate}}" min="{{minDate}}"></ion-datetime>
+              <ion-label text-wrap>Date prévisionnelle de départ à la retraite</ion-label>
+              <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="event.endDate" max="{{maxDate}}" min="{{today | date: 'yyyy-MM-dd'}}"></ion-datetime>
           </ion-item>
       </div>
       <div style="margin-top:30px; padding-left:10px;">
@@ -62,9 +62,9 @@
         <p>Si vous n'avez enregistré aucune intérruption dans votre carrière, si vos cotisations ont été régulièrement versées et si vous n'avez pas de bonification pour campagne en ce qui concerne les militaires, la situation à votre départ à la retraite se présente comme suit: </p>
         <br>
         <p>
-            Date de récrutement : <strong>{{ event.startDate }}</strong>
+            Date de récrutement : <strong>{{ event.startDate | date: 'dd-MM-yyyy' }}</strong>
             <br>
-            Date de retraite: <strong>{{ event.endDate }}</strong>
+            Date de retraite: <strong>{{ event.endDate | date: 'dd-MM-yyyy' }}</strong>
         </p>
         <br>
         <p>
@@ -75,3 +75,4 @@
       </ion-card-content>
   </ion-card>
 </ion-content>
+<ion-footer class="copyright">&copy; 2018 CARFO</ion-footer>

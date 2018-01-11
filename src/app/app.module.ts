@@ -15,11 +15,13 @@ import { ContactsPage } from '../pages/contacts/contacts';
 import { PrestationDetailPage } from '../pages/prestations/prestation-detail';
 import { DemarcheAdministrativeDetailPage } from '../pages/demarches-administratives/demarche-administrative-detail';
 import { ContactDetailPage } from '../pages/contacts/contact-detail';
+import { AboutPage } from '../pages/about/about';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    AboutPage,
     PrestationsPage,
     PrestationDetailPage,
     EvaluationPensionPage,
@@ -37,6 +39,7 @@ import { ContactDetailPage } from '../pages/contacts/contact-detail';
   entryComponents: [
     MyApp,
     HomePage,
+    AboutPage,
     PrestationsPage,
     PrestationDetailPage,
     EvaluationPensionPage,

@@ -10,7 +10,7 @@ export class DemarcheAdministrativeDetailPage {
   title: string;
   description: string;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.type_demarche = navParams.get('type_demarche');
     this.setInformations();
   }

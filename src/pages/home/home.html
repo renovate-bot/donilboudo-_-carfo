@@ -16,19 +16,30 @@
       <table style="margin-left: -50px;">
         <tr>
           <td>
-              <button ion-button round [navPush]="prestation" color="secondary">Prestation</button>
+            <button ion-button full round [navPush]="about" color="secondary">La CARFO</button>
           </td>
         </tr>
         <tr>
           <td>
-              <button ion-button round [navPush]="evaluationPensionInfo" color="secondary">Evaluation de votre pension</button>
+            <button ion-button full round [navPush]="prestation" color="secondary">Prestation</button>
           </td>
         </tr>
         <tr>
           <td>
-              <button ion-button round [navPush]="demarchesAdmininstratives" color="secondary">Démarches administratives</button>
+            <button ion-button full round [navPush]="demarchesAdmininstratives" color="secondary">Démarches administratives</button>
+            </td>
+          </tr>
+        <tr>
+          <td>
+            <button ion-button full round [navPush]="evaluationPensionInfo" color="secondary">Evaluation de votre pension</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button ion-button full round [navPush]="contacts" color="secondary">Contacts</button>
           </td>
         </tr>
       </table>
     </div>
 </ion-content>
+<ion-footer class="copyright">&copy; 2018 CARFO</ion-footer>

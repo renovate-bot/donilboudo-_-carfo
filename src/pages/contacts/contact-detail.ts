@@ -10,7 +10,7 @@ export class ContactDetailPage {
   contacts = [];
   contact: Contact;
 
-  constructor(public navCtrl: NavController, private navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.contact = navParams.get('contact');
   }
 }

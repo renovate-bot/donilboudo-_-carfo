@@ -15,6 +15,7 @@ export class EvaluationPensionPage {
   estimation_month: number;
   maxDate = "2050-12-31";
   minDate;
+  today = new Date();
 
   public event = {
     month: '1990-02-19',
@@ -26,7 +27,7 @@ export class EvaluationPensionPage {
   constructor(public navCtrl: NavController,
               public toastCtrl: ToastController) {
     var today = new Date();
-    this.minDate = today.toLocaleDateString();
+    this.minDate = today.toISOString();
     this.event.endDate = this.minDate;
     
   }
@@ -55,7 +56,7 @@ export class EvaluationPensionPage {
           }
         }
 
-        if(canCalculate) {
+        if (canCalculate) {
           var startDate = new Date(this.event.startDate);
           var endDate = new Date(this.event.endDate);
           var numberOfYears = endDate.getFullYear() - startDate.getFullYear();

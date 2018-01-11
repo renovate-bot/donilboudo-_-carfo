@@ -8,6 +8,7 @@ import { PrestationsPage } from '../pages/prestations/prestations';
 import { DemarchesAdministrativesPage } from '../pages/demarches-administratives/demarches-administratives';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { EvaluationPensionInfoPage } from '../pages/evaluation-pension/evaluation-pension-info';
+import { AboutPage } from '../pages/about/about';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,9 +26,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Acceuil', component: HomePage },
+      { title: 'La CARFO', component: AboutPage },
       { title: 'Prestations', component: PrestationsPage },
-      { title: 'Evaluation Pension', component: EvaluationPensionInfoPage },
       { title: 'Démarches Administratives', component: DemarchesAdministrativesPage },
+      { title: 'Evaluation Pension', component: EvaluationPensionInfoPage },
       { title: 'Contacts', component: ContactsPage },
     ];
 
